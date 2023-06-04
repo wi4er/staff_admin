@@ -1,10 +1,10 @@
-import { UserList } from '../components/UserList';
 
 export function MainPage() {
 
   return (
-    <UserList>
+    <div>
 
-    </UserList>
+      PAGE HERE
+    </div>
   );
 }

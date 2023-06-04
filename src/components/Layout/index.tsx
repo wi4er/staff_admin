@@ -12,7 +12,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { MainMenu } from '../MainMenu';
 
 export function Layout() {
-  const [open, setOpen] = React.useState(false);
+  const [ open, setOpen ] = React.useState(false);
 
   return (
     <main>
@@ -34,7 +34,7 @@ export function Layout() {
             component="div"
             sx={{ flexGrow: 1 }}
           >
-            News
+            Staff admin
           </Typography>
 
           <Button color="inherit">
@@ -44,11 +44,11 @@ export function Layout() {
       </AppBar>
 
       <Drawer
-        anchor={"top"}
+        anchor={'top'}
         open={open}
         onClose={() => setOpen(false)}
       >
-        <MainMenu />
+        <MainMenu/>
       </Drawer>
 
       <Outlet/>

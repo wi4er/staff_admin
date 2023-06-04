@@ -5,6 +5,11 @@ import { MainPage } from './pages/MainPage';
 import { UserPage } from './pages/UserPage';
 import { Layout } from './components/Layout';
 import { createTheme, ThemeProvider } from '@mui/material';
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import { AuthContext } from './context/AuthContext';
 
 const router = createBrowserRouter([
   {
@@ -20,7 +25,7 @@ const router = createBrowserRouter([
         element: <Navigate replace to="/user/user"/>,
       },
       {
-        path: '/user/:page',
+        path: '/user/:entity',
         element: <UserPage/>,
       },
     ],
@@ -31,7 +36,9 @@ const router = createBrowserRouter([
 function App() {
   return (
     <ThemeProvider theme={createTheme({})}>
-      <RouterProvider router={router}/>
+      <AuthContext>
+        <RouterProvider router={router}/>
+      </AuthContext>
     </ThemeProvider>
   );
 }
